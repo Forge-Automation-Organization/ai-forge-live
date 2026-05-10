@@ -1011,17 +1011,7 @@ async function sendLeadEmail(){
     });
   }catch(err){console.log('Support email error:',err);}
 
-  // 2. Send welcome email to client
-  if(leadData.email){
-    try{
-      await emailjs.send('service_q2n2lml','template_yruvosk',{
-        name: leadData.name||'there',
-        email: leadData.email,
-        business: leadData.business||'',
-        problem: leadData.problem||''
-      });
-    }catch(err){console.log('Client email error:',err);}
-  }
+
 }
 
 function extractLeadInfo(msg){
@@ -1246,16 +1236,7 @@ async function handleSubmit(e){
           problem: fMessage
         });
       }catch(err){console.log('Support email error:',err);}
-      if(formEmail){
-        try{
-          await emailjs.send('service_q2n2lml','template_yruvosk',{
-            name: formName,
-            email: formEmail,
-            business: fBusiness,
-            problem: fMessage
-          });
-        }catch(err){console.log('Client email error:',err);}
-      }
+
     }
     else { err.style.display='block'; }
   }catch(e2){ err.style.display='block'; }
