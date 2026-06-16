@@ -147,35 +147,6 @@ section{position:relative;z-index:1;padding:130px 6%;}
 .svc-tag{font-family:var(--fh);font-size:.55rem;letter-spacing:2px;color:var(--orange);text-transform:uppercase;text-align:right;opacity:0;transform:translateX(10px);transition:all .4s;}
 .svc-row:hover .svc-tag{opacity:1;transform:none;}
 
-/* ══════════ TIER GRID ══════════ */
-.tier-grid{margin-top:4.5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:rgba(255,107,26,0.08);border:1px solid rgba(255,107,26,0.1);}
-.tier-card{position:relative;background:var(--bg2);padding:2.6rem 2.4rem;transition:all .4s;overflow:hidden;display:flex;flex-direction:column;}
-.tier-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,107,26,0.05),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none;}
-.tier-card:hover{background:var(--bg3);z-index:2;box-shadow:0 0 0 1px rgba(255,107,26,0.25),0 24px 60px rgba(0,0,0,0.6),0 0 40px rgba(255,107,26,0.06);}
-.tier-card:hover::before{opacity:1;}
-.tier-card:hover .tier-watermark{color:rgba(255,107,26,0.1);transform:scale(1.05) rotate(0deg);}
-.tier-card:hover .tier-name{color:var(--orange);text-shadow:0 0 24px var(--og);}
-.tier-card.featured{background:var(--bg3);}
-.tier-card.featured::after{content:'MOST POPULAR';position:absolute;top:1.8rem;right:1.8rem;background:linear-gradient(135deg,var(--orange),var(--red));color:#fff;font-size:.46rem;letter-spacing:2px;padding:5px 11px;font-family:var(--fh);z-index:3;box-shadow:0 0 20px var(--og);}
-.tier-card.featured{box-shadow:inset 0 2px 0 0 var(--orange);}
-.tier-watermark{position:absolute;top:-1.5rem;right:-0.5rem;font-family:var(--fh);font-size:7rem;font-weight:900;color:rgba(255,107,26,0.04);line-height:1;transition:all .5s;pointer-events:none;z-index:0;transform:rotate(-4deg);}
-.tier-head{position:relative;z-index:1;display:flex;align-items:center;gap:14px;margin-bottom:.4rem;}
-.tier-badge{font-family:var(--fh);font-size:.5rem;letter-spacing:3px;color:var(--orange);text-transform:uppercase;border:1px solid rgba(255,107,26,0.3);padding:5px 10px;background:rgba(255,107,26,0.05);}
-.tier-icon{font-size:1.3rem;filter:drop-shadow(0 0 8px var(--og));}
-.tier-name{position:relative;z-index:1;font-family:var(--fh);font-size:1.45rem;font-weight:900;letter-spacing:1px;color:#fff;margin-bottom:.5rem;transition:all .4s;}
-.tier-desc{position:relative;z-index:1;font-family:var(--fi);font-size:.86rem;color:var(--text3);line-height:1.6;margin-bottom:1.5rem;}
-.tier-includes{position:relative;z-index:1;font-family:var(--fh);font-size:.52rem;letter-spacing:2px;color:var(--text2);text-transform:uppercase;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid rgba(255,107,26,0.12);display:flex;align-items:center;gap:8px;}
-.tier-includes .ti-arrow{color:var(--orange);}
-.tier-includes .ti-prev{color:var(--orange);}
-.tier-includes.base{color:var(--orange);}
-.tier-feats{position:relative;z-index:1;list-style:none;margin-bottom:1.8rem;flex:1;}
-.tier-feats li{padding:8px 0;font-size:.85rem;color:var(--text2);display:flex;align-items:flex-start;gap:11px;font-family:var(--fi);line-height:1.5;}
-.tier-feats li::before{content:'';width:5px;height:5px;margin-top:7px;background:var(--orange);flex-shrink:0;box-shadow:0 0 8px var(--og);transform:rotate(45deg);}
-.tier-btn{position:relative;z-index:1;width:100%;background:transparent;border:1px solid rgba(255,107,26,0.3);color:var(--text3);padding:14px;font-family:var(--fh);font-size:.58rem;letter-spacing:2px;cursor:pointer;transition:all .28s;text-transform:uppercase;}
-.tier-btn:hover,.tier-card.featured .tier-btn{background:linear-gradient(135deg,var(--orange),var(--red));border-color:var(--orange);color:#fff;box-shadow:0 0 24px var(--og);}
-.tier-card.wide{grid-column:1 / -1;}
-.tier-card.wide .tier-watermark{font-size:9rem;top:-2rem;}
-
 /* ══════════ PRICING ══════════ */
 .pricing-section{background:var(--bg3);}
 .pricing-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,107,26,0.04),transparent);}
@@ -239,37 +210,14 @@ section{position:relative;z-index:1;padding:130px 6%;}
 .forge-btn:hover::after{transform:translateX(100%);}
 .forge-btn:hover{box-shadow:0 0 48px var(--og);transform:translateY(-2px);}
 
-/* ══════════ BOOK A CALL MODAL ══════════ */
-.modal-overlay{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;}
-.modal-overlay.open{opacity:1;visibility:visible;}
-.modal-box{position:relative;width:100%;max-width:440px;background:var(--bg3);border:1px solid var(--border2);padding:2.8rem 2.6rem;clip-path:polygon(18px 0%,100% 0%,100% calc(100% - 18px),calc(100% - 18px) 100%,0% 100%,0% 18px);transform:translateY(24px) scale(.97);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s;box-shadow:0 30px 90px rgba(0,0,0,0.7),0 0 60px rgba(255,107,26,0.08);}
-.modal-overlay.open .modal-box{transform:translateY(0) scale(1);opacity:1;}
-.modal-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),var(--red),var(--orange),transparent);}
-.modal-box::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,107,26,0.06),transparent 70%);pointer-events:none;}
-.modal-x{position:absolute;top:1.3rem;right:1.4rem;width:32px;height:32px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;z-index:2;}
-.modal-x:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 16px var(--og);}
-.modal-label{position:relative;z-index:1;font-family:var(--fh);font-size:.5rem;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:8px;}
-.modal-label::before{content:'';width:18px;height:1px;background:var(--orange);box-shadow:0 0 8px var(--og);}
-.modal-box h3{position:relative;z-index:1;font-family:var(--fh);font-size:1.4rem;font-weight:900;letter-spacing:1px;color:#fff;margin-bottom:.5rem;}
-.modal-box .modal-sub{position:relative;z-index:1;font-family:var(--fi);font-size:.84rem;color:var(--text3);line-height:1.6;margin-bottom:1.8rem;}
-.modal-form{position:relative;z-index:1;display:flex;flex-direction:column;gap:1.5rem;}
-.modal-fg{display:flex;flex-direction:column;gap:.65rem;}
-.modal-fg label{font-family:var(--fh);font-size:.5rem;letter-spacing:2px;color:var(--text2);text-transform:uppercase;}
-.modal-fg + .modal-fg{margin-top:.9rem;}
-.modal-fg input{width:100%;background:rgba(0,0,0,0.4);border:1px solid var(--border);color:#fff;padding:13px 15px;font-family:var(--fi);font-size:.9rem;transition:all .25s;}
-.modal-fg input::placeholder{color:rgba(122,106,90,0.7);}
-.modal-fg input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 1px rgba(255,107,26,0.2),0 0 20px rgba(255,107,26,0.06);background:rgba(0,0,0,0.6);}
-.modal-submit{width:100%;margin-top:.5rem;background:linear-gradient(135deg,var(--orange),var(--red));color:#fff;border:none;padding:17px;font-family:var(--fh);font-size:.64rem;letter-spacing:2.5px;cursor:pointer;transition:all .3s;text-transform:uppercase;position:relative;overflow:hidden;clip-path:polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);}
-.modal-submit::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .6s;}
-.modal-submit:hover::after{transform:translateX(100%);}
-.modal-submit:hover{box-shadow:0 0 40px var(--og);transform:translateY(-2px);}
-.modal-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.modal-msg{position:relative;z-index:1;text-align:center;font-family:var(--fi);font-size:.86rem;padding:8px 0;}
-.modal-done{position:relative;z-index:1;text-align:center;padding:1rem 0;}
-.modal-done .md-tick{font-size:2.6rem;margin-bottom:.8rem;}
-.modal-done h4{font-family:var(--fh);font-size:1.1rem;color:#fff;letter-spacing:1px;margin-bottom:.6rem;}
-.modal-done p{font-family:var(--fi);font-size:.86rem;color:var(--text3);line-height:1.6;}
-@media(max-width:520px){.modal-box{padding:2.2rem 1.6rem;}}
+/* BOOK A CALL MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:5%;}
+.modal-overlay.open{display:flex;}
+.modal-box{position:relative;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;background:rgba(8,5,7,0.98);border:1px solid var(--border2);box-shadow:0 0 60px var(--og);padding:2.6rem 2.2rem;clip-path:polygon(16px 0%,100% 0%,100% calc(100% - 16px),calc(100% - 16px) 100%,0% 100%,0% 16px);}
+.modal-close{position:absolute;top:1.1rem;right:1.2rem;background:none;border:none;color:var(--text2);font-size:1.4rem;line-height:1;cursor:pointer;transition:color .2s;}
+.modal-close:hover{color:var(--orange);}
+.modal-box h3{font-family:var(--fh);font-size:1.2rem;font-weight:900;letter-spacing:1px;margin-bottom:.4rem;}
+.modal-box .modal-sub{color:var(--text2);font-size:.85rem;font-family:var(--fi);margin-bottom:1.6rem;line-height:1.7;}
 
 /* ══════════ FOOTER ══════════ */
 footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255,107,26,0.1);padding:3rem 6%;}
@@ -338,9 +286,6 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
   .svc-tag{display:none;}
   .svc-info h3{font-size:1rem;}
   .svc-info p{font-size:.8rem;}
-  .tier-grid{grid-template-columns:1fr;}
-  .tier-card{padding:2rem 1.6rem;}
-  .tier-card.featured::after{top:1.4rem;right:1.4rem;}
   .price-scroll-wrap{overflow-x:auto;}
   .price-scroll{display:flex;flex-wrap:nowrap;padding:0 1rem;gap:1rem;}
   .pc{min-width:260px;max-width:280px;flex-shrink:0;}
@@ -450,6 +395,7 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
   <div class="chat-msgs" id="chatMsgs"><div class="msg bot">Hey! 👋 I'm Forge, your AI advisor here. What's your name?</div></div>
   <div class="suggs" id="suggs">
     <button class="sg" onclick="qa('Tell me about your services')" tabindex="-1">Services 🔥</button>
+    <button class="sg" onclick="qa('What are your prices?')" tabindex="-1">Pricing 💰</button>
     <button class="sg" onclick="qa('Help me find the right package')" tabindex="-1">Help me choose ✨</button>
     <button class="sg" onclick="qa('What makes you different?')" tabindex="-1">Why us? 🤝</button>
   </div>
@@ -464,11 +410,36 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-cta" onclick="openBooking()"><span>Book a Call</span></button>
+    <button class="nav-cta" onclick="openBookCallModal()"><span>Book a Call</span></button>
   </div>
 </nav>
+
+<!-- ══ BOOK A CALL MODAL ══ -->
+<div class="modal-overlay" id="bookCallModal" onclick="if(event.target===this)closeBookCallModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeBookCallModal()" aria-label="Close">×</button>
+    <h3>Book a Free Strategy Call</h3>
+    <p class="modal-sub">Tell us a bit about your business and we'll be in touch same day to schedule your call.</p>
+    <form class="cform" id="bookCallForm" onsubmit="handleBookCallSubmit(event)" novalidate>
+      <input type="hidden" name="access_key" value="0cf7a060-0a46-4c90-b469-33246352f745">
+      <div class="frow">
+        <div class="fg"><label>Owner Name</label><input type="text" name="owner_name" placeholder="John Smith"></div>
+        <div class="fg"><label>Business Name</label><input type="text" name="business_name" placeholder="Smith's Diner"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Business Phone Number</label><input type="tel" name="business_phone" placeholder="+1 234 567 8900"></div>
+        <div class="fg"><label>Profession / Industry</label><input type="text" name="profession" placeholder="e.g. Restaurant, Salon, Clinic..."></div>
+      </div>
+      <div class="fg"><label>What's the Problem?</label><textarea name="problem" placeholder="Tell us what you're struggling with..."></textarea></div>
+      <button type="submit" class="forge-btn" id="bookCallBtn">Request a Call →</button>
+      <div id="bookCallSuccess" style="display:none;color:#4caf50;padding:10px;text-align:center;">✅ Got it! We'll be in touch same day to schedule your call.</div>
+      <div id="bookCallError" style="display:none;color:#e8192c;padding:10px;text-align:center;">❌ Something went wrong. Email us directly at support@forgeaiautomations.net</div>
+    </form>
+  </div>
+</div>
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
@@ -484,7 +455,7 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
     <div class="forge-title" id="forgeTitle" aria-label="AUTOMATE. DOMINATE. SCALE."></div>
     <p class="hero-sub">We don't build tools. We forge intelligent systems — hammered from fire, precision-engineered to eliminate manual work, capture every lead, and dominate your market 24/7.</p>
     <div class="hero-btns">
-      <button class="btn-forge" onclick="openBooking()">Book a Free Strategy Call</button>
+      <button class="btn-forge" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Free Strategy Call</button>
       <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Our Work</button>
     </div>
     <div class="hero-stats">
@@ -566,111 +537,99 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:1rem;">
       <div>
         <div class="ed-label rv">What We Forge</div>
-        <h2 class="big-title rv rv1">Seven Tiers.<br><em>One Path.</em></h2>
+        <h2 class="big-title rv rv1">Six Services.<br><em>One Standard.</em></h2>
         <div class="fire-bar rv rv2"></div>
       </div>
-      <p class="body-text rv rv2" style="padding-bottom:.5rem;">Each tier is forged on top of the one before it — every level you climb keeps everything below and adds more firepower. Start where you are, scale when you're ready.</p>
+      <p class="body-text rv rv2" style="padding-bottom:.5rem;">Every service we offer is built to the same uncompromising standard — engineered for performance, forged for longevity, delivered with precision.</p>
     </div>
-    <div class="tier-grid rv rv2">
-
-      <div class="tier-card">
-        <div class="tier-watermark">01</div>
-        <div class="tier-head"><span class="tier-badge">Tier 01</span></div>
-        <h3 class="tier-name">Starter</h3>
-        <p class="tier-desc">Your first website — a fast, solid online presence that establishes your brand and gets you found.</p>
-        <div class="tier-includes base"><span class="ti-arrow">◆</span> The Foundation</div>
-        <ul class="tier-feats">
-          <li>Professional static website</li>
-          <li>Brand, services &amp; contact</li>
-          <li>Fast launch — no tech needed</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+    <div class="svc-rows rv rv2">
+      <div class="svc-row">
+        <div class="svc-num">01</div>
+        <div class="svc-icon-wrap">⚡</div>
+        <div class="svc-info"><h3>Web Presence</h3><p>Professional websites engineered to convert visitors into clients — from fast static sites to fully-managed CMS platforms you control without writing a line of code.</p></div>
+        <div class="svc-tag">From $180/mo →</div>
       </div>
-
-      <div class="tier-card">
-        <div class="tier-watermark">02</div>
-        <div class="tier-head"><span class="tier-badge">Tier 02</span></div>
-        <h3 class="tier-name">Growth</h3>
-        <p class="tier-desc">Take control of your content with a full CMS — update text and images yourself, anytime.</p>
-        <div class="tier-includes"><span class="ti-arrow">▲</span> Everything in <span class="ti-prev">Starter</span>, plus</div>
-        <ul class="tier-feats">
-          <li>Content Management System</li>
-          <li>Edit text &amp; images yourself</li>
-          <li>Full ownership of your site</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+      <div class="svc-row">
+        <div class="svc-num">02</div>
+        <div class="svc-icon-wrap">🎯</div>
+        <div class="svc-info"><h3>Lead Generation</h3><p>High-converting funnels, lead capture forms and strategic pop-ups, precision-engineered to turn every visitor into a qualified prospect and every prospect into a paying customer.</p></div>
+        <div class="svc-tag">From $360/mo →</div>
       </div>
-
-      <div class="tier-card">
-        <div class="tier-watermark">03</div>
-        <div class="tier-head"><span class="tier-badge">Tier 03</span></div>
-        <h3 class="tier-name">Marketing</h3>
-        <p class="tier-desc">Get discovered. Built-in blog, SEO and email tools that turn search traffic into real leads.</p>
-        <div class="tier-includes"><span class="ti-arrow">▲</span> Everything in <span class="ti-prev">Growth</span>, plus</div>
-        <ul class="tier-feats">
-          <li>Built-in blog for SEO</li>
-          <li>Email notification system</li>
-          <li>Search-engine optimization</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+      <div class="svc-row">
+        <div class="svc-num">03</div>
+        <div class="svc-icon-wrap">🤖</div>
+        <div class="svc-info"><h3>AI Chatbot & Automation</h3><p>Intelligent AI systems that qualify leads, answer questions and route clients 24/7 with zero manual input. Your business works while you sleep — and when you're on holiday.</p></div>
+        <div class="svc-tag">From $630/mo →</div>
       </div>
-
-      <div class="tier-card">
-        <div class="tier-watermark">04</div>
-        <div class="tier-head"><span class="tier-badge">Tier 04</span></div>
-        <h3 class="tier-name">Conversion</h3>
-        <p class="tier-desc">Turn visitors into customers with high-converting lead capture, pop-ups and sales funnels.</p>
-        <div class="tier-includes"><span class="ti-arrow">▲</span> Everything in <span class="ti-prev">Marketing</span>, plus</div>
-        <ul class="tier-feats">
-          <li>Lead capture &amp; pop-ups</li>
-          <li>Sales funnel optimization</li>
-          <li>Conversion-focused design</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+      <div class="svc-row">
+        <div class="svc-num">04</div>
+        <div class="svc-icon-wrap">📱</div>
+        <div class="svc-info"><h3>WhatsApp & Follow-Up Systems</h3><p>Automated WhatsApp sequences and intelligent follow-up flows that keep your pipeline warm — ensuring no lead ever falls through the cracks again, day or night.</p></div>
+        <div class="svc-tag">From $900/mo →</div>
       </div>
-
-      <div class="tier-card featured">
-        <div class="tier-watermark">05</div>
-        <div class="tier-head"><span class="tier-badge">Tier 05</span></div>
-        <h3 class="tier-name">Automation</h3>
-        <p class="tier-desc">Your business works 24/7. An AI chatbot qualifies leads and auto-routes clients while you sleep.</p>
-        <div class="tier-includes"><span class="ti-arrow">▲</span> Everything in <span class="ti-prev">Conversion</span>, plus</div>
-        <ul class="tier-feats">
-          <li>AI chatbot — 24/7 active</li>
-          <li>Auto-routes potential clients</li>
-          <li>Automated lead qualification</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+      <div class="svc-row">
+        <div class="svc-num">05</div>
+        <div class="svc-icon-wrap">🏗️</div>
+        <div class="svc-info"><h3>Custom ERP Systems</h3><p>All-in-one business operating systems — CRM, workflows, sales pipelines and full automation forged into a single, unified platform. Built for businesses that are ready to scale without limits.</p></div>
+        <div class="svc-tag">From $1,260/mo →</div>
       </div>
-
-      <div class="tier-card">
-        <div class="tier-watermark">06</div>
-        <div class="tier-head"><span class="tier-badge">Tier 06</span></div>
-        <h3 class="tier-name">Scale</h3>
-        <p class="tier-desc">Reach clients where they are. WhatsApp integration, automated follow-ups and call center features.</p>
-        <div class="tier-includes"><span class="ti-arrow">▲</span> Everything in <span class="ti-prev">Automation</span>, plus</div>
-        <ul class="tier-feats">
-          <li>WhatsApp integration</li>
-          <li>Automated follow-ups</li>
-          <li>Call center features</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+      <div class="svc-row">
+        <div class="svc-num">06</div>
+        <div class="svc-icon-wrap">📣</div>
+        <div class="svc-info"><h3>Social Media Management</h3><p>Cinematic reels, curated posts, custom graphics, professional camera shoots and viral hook strategies — content forged to dominate every feed and convert followers into revenue.</p></div>
+        <div class="svc-tag">From $400/mo →</form>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="tier-card wide">
-        <div class="tier-watermark">07</div>
-        <div class="tier-head"><span class="tier-badge">Tier 07 — Top Tier</span></div>
-        <h3 class="tier-name">Enterprise</h3>
-        <p class="tier-desc">The complete operating system for your business — a custom ERP, CRM and full automation forged into a single unified platform that runs your entire operation end to end.</p>
-        <div class="tier-includes"><span class="ti-arrow">▲</span> Everything in <span class="ti-prev">Scale</span> &amp; every tier before it, plus</div>
-        <ul class="tier-feats">
-          <li>Custom ERP system</li>
-          <li>CRM &amp; full automation</li>
-          <li>End-to-end operations</li>
-        </ul>
-        <button class="tier-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
+<div class="molten-divider"></div>
+
+<!-- ══ PRICING ══ -->
+<section class="pricing-section" id="pricing">
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:1rem;">
+      <div>
+        <div class="ed-label rv">Investment</div>
+        <h2 class="big-title rv rv1">Transparent.<br><em>No Surprises.</em></h2>
+        <div class="fire-bar rv rv2"></div>
       </div>
-
+      <p class="body-text rv rv2" style="padding-bottom:.5rem;">Every package is built on a foundation of honesty. You know exactly what you're getting, what it costs, and what it will do for your business — before you sign anything.</p>
+    </div>
+    <div class="tab-row rv rv3">
+      <button class="tab-btn active" onclick="switchTab('ai',this)">AI Automation</button>
+      <button class="tab-btn" onclick="switchTab('smm',this)">Social Media</button>
+    </div>
+    <div id="tab-ai">
+      <div class="price-scroll-wrap rv rv4">
+        <div class="price-scroll" id="aiScroll">
+          <div class="pc"><div class="pc-tier">Tier 1</div><div class="pc-name">Starter</div><div class="pc-tag">First website, solid presence</div><ul class="pc-feats"><li>Professional static website</li><li>Brand, services & contact</li><li>Fast launch — no tech needed</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+          <div class="pc"><div class="pc-tier">Tier 2</div><div class="pc-name">Growth</div><div class="pc-tag">DIY content updates with CMS</div><ul class="pc-feats"><li>Everything in Tier 1</li><li>Content Management System</li><li>Edit text & images yourself</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+          <div class="pc"><div class="pc-tier">Tier 3</div><div class="pc-name">Marketing</div><div class="pc-tag">Blog + SEO + email marketing</div><ul class="pc-feats"><li>Everything in Tiers 1 & 2</li><li>Built-in blog for SEO</li><li>Email notification system</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+          <div class="pc"><div class="pc-tier">Tier 4</div><div class="pc-name">Conversion</div><div class="pc-tag">Lead gen forms & funnels</div><ul class="pc-feats"><li>Everything in Tiers 1, 2 & 3</li><li>Lead capture & pop-ups</li><li>Sales funnel optimization</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+          <div class="pc hot"><div class="pc-tier">Tier 5</div><div class="pc-name">Automation</div><div class="pc-tag">AI chatbot + lead qualification</div><ul class="pc-feats"><li>Everything in Tiers 1, 2, 3 & 4</li><li>AI chatbot — 24/7 active</li><li>Auto-routes potential clients</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+          <div class="pc"><div class="pc-tier">Tier 6</div><div class="pc-name">Scale</div><div class="pc-tag">WhatsApp + call center</div><ul class="pc-feats"><li>Everything in Tiers 1, 2, 3, 4 & 5</li><li>WhatsApp integration</li><li>Automated follow-ups</li><li>Call center features</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+          <div class="pc"><div class="pc-tier">Tier 7</div><div class="pc-name">Enterprise</div><div class="pc-tag">Full ERP + all operations</div><ul class="pc-feats"><li>Everything in Tiers 1, 2, 3, 4, 5 & 6</li><li>Custom ERP system</li><li>CRM & full automation</li><li>End-to-end operations</li></ul><button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button></div>
+        </div>
+      </div>
+      <div class="scroll-hint rv" style="color:var(--text2);font-size:.72rem;font-family:var(--fi);margin-top:1rem;display:flex;align-items:center;gap:10px;">Swipe to explore all 7 packages</div>
+    </div>
+    <div id="tab-smm" class="hidden">
+      <div class="rv rv4" style="display:flex;justify-content:center;">
+        <div class="pc" style="max-width:420px;text-align:center;">
+          <div class="pc-tier">Social Media</div>
+          <div class="pc-name">Per-Visit Content Production</div>
+          <div class="pc-tag">One flat rate, every time we show up</div>
+          <ul class="pc-feats">
+            <li>Flat fee charged per filming visit</li>
+            <li>Unlimited reels filmed during that visit</li>
+            <li>Full content creation — copy, captions & hashtags</li>
+            <li>No monthly contracts or hidden fees</li>
+          </ul>
+          <button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+        </div>
+      </div>
+      <p style="margin-top:1.2rem;color:var(--text2);font-size:.78rem;font-style:italic;font-family:var(--fi);text-align:center;">You're charged once per visit — no matter how many reels we film while we're there.</p>
     </div>
   </div>
 </section>
@@ -699,8 +658,9 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
           <div class="frow"><div class="fg"><label>Business Type</label><input type="text" name="business_type" placeholder="e.g. Restaurant, E-commerce, Agency..." tabindex="-1"></div><div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 234 567 8900" tabindex="-1"></div></div>
           <div class="fg"><label>Interested In</label>
             <select tabindex="-1">
-              <option value="">Select a tier...</option>
-              <option>Tier 1 — Starter</option><option>Tier 2 — Growth</option><option>Tier 3 — Marketing</option><option>Tier 4 — Conversion</option><option>Tier 5 — Automation</option><option>Tier 6 — Scale</option><option>Tier 7 — Enterprise</option>
+              <option value="">Select a service...</option>
+              <option>AI — Tier 1: Starter</option><option>AI — Tier 2: Growth</option><option>AI — Tier 3: Marketing</option><option>AI — Tier 4: Conversion</option><option>AI — Tier 5: Automation</option><option>AI — Tier 6: Scale</option><option>AI — Tier 7: Enterprise</option>
+              <option>SMM — Per-Visit Content Production</option>
               <option>Not sure — need advice</option>
             </select>
           </div>
@@ -1015,6 +975,23 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
+/* ══ TABS ══ */
+function switchTab(t,btn){
+  document.getElementById('tab-ai').classList.toggle('hidden',t!=='ai');
+  document.getElementById('tab-smm').classList.toggle('hidden',t!=='smm');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* ══ DRAG SCROLL ══ */
+document.querySelectorAll('.price-scroll').forEach(el=>{
+  let isDown=false,startX,scrollLeft;
+  el.addEventListener('mousedown',e=>{isDown=true;startX=e.pageX-el.offsetLeft;scrollLeft=el.scrollLeft;});
+  el.addEventListener('mouseleave',()=>isDown=false);
+  el.addEventListener('mouseup',()=>isDown=false);
+  el.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=(e.pageX-el.offsetLeft);el.scrollLeft=scrollLeft-(x-startX)*1.5;});
+});
+
 /* ══ CHATBOT ══ */
 let chatOpen=false,history=[];
 function toggleChat(e){
@@ -1127,6 +1104,10 @@ RULES:
 - NEVER say you sent a confirmation until they actually gave you their email
 - Once they give email say EXACTLY: "Perfect! I've sent a confirmation to your email with a link to book your free strategy call. Check your inbox! 📩"
 - ONE question per message, follow the steps in order
+
+PACKAGES (mention only when relevant, keep it brief):
+AI: Starter $139.99/mo | Growth $209.99/mo | Marketing $279.99/mo | Conversion $279.99/mo | Automation $489.99/mo ⭐ | Scale $699.99/mo | Enterprise $979.99/mo
+SMM: Starter $400/mo | Pro $600/mo | Elite $1,000/mo
 
 IMPORTANT: SHORT replies only. Max 2-3 sentences. One question per message. Sound human.`;
 
@@ -1252,6 +1233,67 @@ IMPORTANT: SHORT replies only. Max 2-3 sentences. One question per message. Soun
 
 
 /* ══ FORM SUBMISSION ══ */
+function openBookCallModal(){
+  document.getElementById('bookCallModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeBookCallModal(){
+  document.getElementById('bookCallModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeBookCallModal();
+});
+
+async function handleBookCallSubmit(e){
+  e.preventDefault();
+  const btn=document.getElementById('bookCallBtn');
+  const formData=new FormData(e.target);
+  const ownerName=formData.get('owner_name')||'Not provided';
+  const businessName=formData.get('business_name')||'Not provided';
+  const businessPhone=formData.get('business_phone')||'Not provided';
+  const profession=formData.get('profession')||'Not provided';
+  const problem=formData.get('problem')||'Not provided';
+  const ok=document.getElementById('bookCallSuccess');
+  const err=document.getElementById('bookCallError');
+  ok.style.display='none'; err.style.display='none';
+  btn.textContent='Sending...'; btn.disabled=true; btn.style.opacity='.6';
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        access_key: document.querySelector('#bookCallForm [name=access_key]').value,
+        subject: 'New Book a Call Request from AI Forge Website',
+        name: ownerName,
+        business: businessName,
+        phone: businessPhone,
+        profession: profession,
+        message: problem,
+        from_name: 'AI Forge Website'
+      })
+    });
+    const data=await res.json();
+    if(data.success){
+      ok.style.display='block';
+      e.target.reset();
+      try{
+        await emailjs.send('service_q2n2lml','template_gxiedbd',{
+          score: 'Book a Call Request',
+          name: ownerName,
+          email: 'Not provided',
+          phone: businessPhone,
+          business: businessName + ' (' + profession + ')',
+          budget: 'Not provided',
+          problem: problem
+        });
+      }catch(err2){console.log('Support email error:',err2);}
+    }
+    else { err.style.display='block'; }
+  }catch(e2){ err.style.display='block'; }
+  finally{ btn.textContent='Request a Call →'; btn.disabled=false; btn.style.opacity='1'; }
+}
+
 async function handleSubmit(e){
   e.preventDefault();
   const btn=document.getElementById('submitBtn');
@@ -1312,95 +1354,6 @@ document.querySelectorAll('.cform input, .cform textarea, .cform select').forEac
     this.focus();
   }, {once: true});
 });
-</script>
-
-<!-- ══ BOOK A CALL MODAL ══ -->
-<div class="modal-overlay" id="bookingModal" onclick="if(event.target===this)closeBooking()">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
-    <button class="modal-x" onclick="closeBooking()" aria-label="Close">✕</button>
-    <div id="bookingFormWrap">
-      <div class="modal-label">Book a Call</div>
-      <h3 id="bookingTitle">Let's Forge a Plan</h3>
-      <p class="modal-sub">Drop your details and we'll reach out same day to schedule your free strategy call.</p>
-      <form class="modal-form" id="bookingForm" onsubmit="submitBooking(event)" novalidate>
-        <div class="modal-fg"><label>Your Name</label><input type="text" id="bk_name" placeholder="John Smith" required></div>
-        <div class="modal-fg"><label>Phone Number</label><input type="tel" id="bk_phone" placeholder="+1 234 567 8900" required></div>
-        <div class="modal-fg"><label>Business Type</label><input type="text" id="bk_btype" placeholder="e.g. Restaurant, E-commerce, Agency..." required></div>
-        <div class="modal-fg"><label>Business Name</label><input type="text" id="bk_bname" placeholder="Your company name" required></div>
-        <button type="submit" class="modal-submit" id="bk_submit">Request a Call →</button>
-        <div class="modal-msg" id="bk_error" style="display:none;color:var(--red);">❌ Something went wrong. Email us at support@forgeaiautomations.net</div>
-      </form>
-    </div>
-    <div class="modal-done" id="bookingDone" style="display:none;">
-      <div class="md-tick">🔥</div>
-      <h4>You're In!</h4>
-      <p>Thanks — we've got your details and we'll reach out same day to lock in your call.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-function openBooking(){
-  if(document.activeElement){document.activeElement.blur();}
-  document.getElementById('bookingFormWrap').style.display='block';
-  document.getElementById('bookingDone').style.display='none';
-  document.getElementById('bk_error').style.display='none';
-  document.getElementById('bookingModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeBooking(){
-  document.getElementById('bookingModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'&&document.getElementById('bookingModal').classList.contains('open')){closeBooking();}
-});
-
-async function submitBooking(e){
-  e.preventDefault();
-  const btn=document.getElementById('bk_submit');
-  const err=document.getElementById('bk_error');
-  err.style.display='none';
-  const name=document.getElementById('bk_name').value.trim();
-  const phone=document.getElementById('bk_phone').value.trim();
-  const btype=document.getElementById('bk_btype').value.trim();
-  const bname=document.getElementById('bk_bname').value.trim();
-  if(!name||!phone||!btype||!bname){err.textContent='Please fill in all fields.';err.style.display='block';return;}
-  btn.textContent='Sending...'; btn.disabled=true;
-  try{
-    const res=await fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        access_key:'0cf7a060-0a46-4c90-b469-33246352f745',
-        subject:'New Call Booking from AI Forge Website',
-        from_name:'AI Forge Website',
-        name:name,
-        phone:phone,
-        business_type:btype,
-        business_name:bname
-      })
-    });
-    const data=await res.json();
-    if(data.success){
-      document.getElementById('bookingFormWrap').style.display='none';
-      document.getElementById('bookingDone').style.display='block';
-      document.getElementById('bookingForm').reset();
-      try{
-        await emailjs.send('service_q2n2lml','template_gxiedbd',{
-          score:'Call Booking',
-          name:name,
-          email:'Not provided',
-          phone:phone,
-          business:btype+' — '+bname,
-          budget:'Not provided',
-          problem:'Requested a call via Book a Call popup'
-        });
-      }catch(e3){console.log('Support email error:',e3);}
-    }else{ err.textContent='❌ Something went wrong. Email us at support@forgeaiautomations.net'; err.style.display='block'; }
-  }catch(e2){ err.textContent='❌ Something went wrong. Email us at support@forgeaiautomations.net'; err.style.display='block'; }
-  finally{ btn.textContent='Request a Call →'; btn.disabled=false; }
-}
 </script>
 </body>
 </html>
