@@ -1107,11 +1107,10 @@ Once you understand their needs well enough to recommend a plan, tell them clear
 IF UNSURE: If asked something you genuinely don't know (exact contract terms, delivery dates, etc.), be honest and point them to support@forgeiautomation.net rather than guessing.`;
 
   try{
-    const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+    const r=await fetch('https://forge-chat-proxy.ahmad-05e.workers.dev/',{
       method:'POST',
       headers:{
-        'Content-Type':'application/json',
-        'Authorization':'Bearer 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'
+        'Content-Type':'application/json'
       },
       body:JSON.stringify({
         model:'llama-3.1-8b-instant',
