@@ -436,7 +436,7 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
       <div class="fg"><label>What's the Problem?</label><textarea name="problem" placeholder="Tell us what you're struggling with..."></textarea></div>
       <button type="submit" class="forge-btn" id="bookCallBtn">Request a Call →</button>
       <div id="bookCallSuccess" style="display:none;color:#4caf50;padding:10px;text-align:center;">✅ Got it! We'll be in touch same day to schedule your call.</div>
-      <div id="bookCallError" style="display:none;color:#e8192c;padding:10px;text-align:center;">❌ Something went wrong. Email us directly at support@forgeaiautomations.net</div>
+      <div id="bookCallError" style="display:none;color:#e8192c;padding:10px;text-align:center;">❌ Something went wrong. Email us directly at support@forgeiautomation.net</div>
     </form>
   </div>
 </div>
@@ -647,7 +647,7 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
     <div class="contact-grid">
       <div class="rv rv2">
         <div class="ci"><h3>Book a Free Strategy Call</h3><p>Every great system starts with a conversation. Tell us about your business and we'll forge a plan that fits — no fluff, no pressure, just clear direction and real solutions.</p></div>
-        <div class="cdet"><div class="cdet-icon">📧</div><div><strong>Email</strong><span>support@forgeaiautomations.net</span></div></div>
+        <div class="cdet"><div class="cdet-icon">📧</div><div><strong>Email</strong><span>support@forgeiautomation.net</span></div></div>
         <div class="cdet"><div class="cdet-icon">⚡</div><div><strong>Response Time</strong><span>Direct — same day</span></div></div>
         <div class="cdet"><div class="cdet-icon">🌍</div><div><strong>Availability</strong><span>Serving clients worldwide</span></div></div>
         <div class="cbox"><p>💡 <strong style="color:#fff">Not sure which package fits?</strong> Open the AI assistant — it knows every package inside out and will recommend the perfect fit in under 60 seconds.</p></div>
@@ -667,7 +667,7 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
           <div class="fg"><label>Message</label><textarea name="message" tabindex="-1" placeholder="Tell us about your business and what you want to achieve..."></textarea></div>
           <button type="submit" class="forge-btn" id="submitBtn">Request a Quote →</button>
           <div id="formSuccess" style="display:none;color:#4caf50;padding:10px;text-align:center;">✅ Message sent! We'll be in touch same day.</div>
-          <div id="formError" style="display:none;color:#e8192c;padding:10px;text-align:center;">❌ Something went wrong. Email us directly at support@forgeaiautomations.net</div>
+          <div id="formError" style="display:none;color:#e8192c;padding:10px;text-align:center;">❌ Something went wrong. Email us directly at support@forgeiautomation.net</div>
         </div>
       </div>
     </div>
@@ -678,7 +678,7 @@ footer{position:relative;z-index:1;background:#000;border-top:1px solid rgba(255
   <div class="foot-inner">
     <div class="foot-logo"><span class="ai">AI</span> FORGE AUTOMATION</div>
     <div class="foot-mid">© 2025 AI Forge Automation. Forged with precision. All rights reserved.</div>
-    <div class="foot-email">support@forgeaiautomations.net</div>
+    <div class="foot-email">support@forgeiautomation.net</div>
   </div>
 </footer>
 
@@ -1065,9 +1065,7 @@ function extractLeadInfo(msg){
   if(!leadData.budget && msg.match(/\$|\d+\s*(k|usd|dollar|per|month|mo|\/mo|budget|invest|spend|afford|range|monthly)/i))leadData.budget=msg;
   if(!leadData.budget && msg.match(/\d{2,}/))leadData.budget=msg; // any number 10+
   // Only send after we have name + business + problem/budget + contact info
-  if(leadData.email && leadData.business && (leadData.problem||leadData.budget)){
-    setTimeout(sendLeadEmail, 3000);
-  }
+  // NOTE: chatbot no longer auto-emails — only the Request a Quote form and Book a Call modal send emails.
 }
 
 async function br(msg){
@@ -1081,48 +1079,53 @@ async function br(msg){
 
 PERSONALITY:
 - Talk like a real person texting — casual, warm, genuine
-- VERY SHORT replies — max 2-3 sentences, like a WhatsApp message
+- SHORT replies — max 2-4 sentences
 - React naturally: "oh nice!", "that's great!", "got it 👍"
-- Show empathy: "that's actually super common", "totally understand"
-- NEVER say "Certainly!", "Of course!", "Absolutely!" — those are robotic
-- Use emojis naturally but sparingly 🔥
-- Remember what they said and reference it
-- If they're funny, laugh a little 😄
-- Make them feel like talking to a knowledgeable friend
-- Ask ONE question at a time, never multiple
+- Never say "Certainly!", "Of course!", "Absolutely!" — robotic
+- Emojis sparingly 🔥
+- One question at a time
 
-YOUR GOAL — naturally collect in this order:
-STRICT STEP BY STEP — do NOT skip steps:
-STEP 1: Ask their name ONLY
-STEP 2: Ask what kind of business they run ONLY
-STEP 3: Ask their biggest challenge ONLY
-STEP 4: Ask their monthly budget ONLY
-STEP 5: ONLY after completing steps 1-4, ask "What's the best email to send your custom plan to?"
+TOP PRIORITY: Always answer what the visitor actually asked, with real specific info, BEFORE doing anything else. Never dodge a question to push lead capture. If they ask about pricing, services, or how something works, answer it directly using the info below.
 
-RULES:
-- NEVER ask for email before completing steps 1-4
-- NEVER say you sent a confirmation until they actually gave you their email
-- Once they give email say EXACTLY: "Perfect! I've sent a confirmation to your email with a link to book your free strategy call. Check your inbox! 📩"
-- ONE question per message, follow the steps in order
+SERVICES & TIERS (cumulative — each tier includes everything in the tier before it):
+Tier 1 Starter $139.99/mo (setup $559.99) — professional static website, brand & contact info, fast launch, no tech needed.
+Tier 2 Growth $209.99/mo (setup $699.99) — adds a CMS so they can edit text/images themselves.
+Tier 3 Marketing $279.99/mo (setup $979.99) — adds blog, SEO, email notification system.
+Tier 4 Conversion $279.99/mo (setup $1,399.99) — adds lead capture forms, pop-ups, sales funnel optimization.
+Tier 5 Automation $489.99/mo (setup $2,099.99) ⭐ most popular — adds a 24/7 AI chatbot that qualifies leads automatically.
+Tier 6 Scale $699.99/mo (setup $3,499.99) — adds WhatsApp integration, automated follow-ups, call center features.
+Tier 7 Enterprise $979.99/mo (setup $4,899.99) — adds a full custom CRM + ERP system, end-to-end operations automation.
 
-PACKAGES (mention only when relevant, keep it brief):
-AI: Starter $139.99/mo | Growth $209.99/mo | Marketing $279.99/mo | Conversion $279.99/mo | Automation $489.99/mo ⭐ | Scale $699.99/mo | Enterprise $979.99/mo
-SMM: Starter $400/mo | Pro $600/mo | Elite $1,000/mo
+SMM packages (separate, social media management): Starter $400/mo (6 reels, 5 posts), Professional $600/mo (8 reels, 7 posts, camera shoot) ⭐ most popular, Elite $1,000/mo (12 reels, 10 posts, multi-location shoots, priority support).
 
-IMPORTANT: SHORT replies only. Max 2-3 sentences. One question per message. Sound human.`;
+HOW TO RECOMMEND: Match the tier to their actual problem, not just price. Examples: "I get inquiries but can't respond fast enough" → Automation tier (AI chatbot). "I need an online presence but have zero tech skills" → Starter. "I run a large operation, need sales tracking + ops" → Enterprise. Always explain briefly WHY that tier fits them, not just the name and price.
+
+LEAD CAPTURE — do this naturally, woven into the conversation, NOT as a rigid interrogation:
+Once they've shown real interest (asked about a specific tier, said they want help, etc.), gather over time: name → business type → their main challenge → budget. Ask ONE at a time. Skip anything they already told you.
+Once you understand their needs well enough to recommend a plan, tell them clearly: "Click 'Request a Quote' below or 'Book a Call' up top — that's the fastest way to lock in your custom plan with our team today." Do NOT say you've sent any email or confirmation — you haven't. Only the Request a Quote form and Book a Call button actually notify the team.
+
+IF UNSURE: If asked something you genuinely don't know (exact contract terms, delivery dates, etc.), be honest and point them to support@forgeiautomation.net rather than guessing.`;
 
   try{
-    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({system:sys,messages:history.slice(-10)})});
+    const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'Authorization':'Bearer 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'
+      },
+      body:JSON.stringify({
+        model:'llama-3.1-8b-instant',
+        messages:[{role:'system',content:sys},...history.slice(-10)],
+        temperature:0.7,
+        max_tokens:350
+      })
+    });
     const d=await r.json();rt();
-    const reply=d.reply;
+    const reply=d.choices && d.choices[0] && d.choices[0].message ? d.choices[0].message.content : null;
     if(reply){
       am(reply,'bot');
-      // Extract lead info from bot replies mentioning contact
-      if(reply.toLowerCase().includes('email')||reply.toLowerCase().includes('phone')||reply.toLowerCase().includes('contact')){
-        // bot asked for contact - next user message will be captured
-      }
-    }else{am('Let me get someone from the team to help you! Reach us at support@forgeaiautomations.net 🔥','bot');}
-  }catch(e){rt();am('Hmm, having a little trouble connecting 😅 Reach us directly at <strong style="color:var(--orange)">support@forgeaiautomations.net</strong>','bot');}
+    }else{am('Let me get someone from the team to help you! Reach us at support@forgeiautomation.net 🔥','bot');}
+  }catch(e){rt();am('Hmm, having a little trouble connecting 😅 Reach us directly at <strong style="color:var(--orange)">support@forgeiautomation.net</strong>','bot');}
 }
 
 
